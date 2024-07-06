@@ -2,18 +2,19 @@ import uuid
 import numpy as np
 import face_recognition
 from .database import get_db_connection
+from io import BytesIO
 
 class FaceRecognitionSystem:
     def __init__(self):
         self.conn = get_db_connection()
 
-    def detect_faces(self, image_path):
-        image = face_recognition.load_image_file(image_path)
+    def detect_faces(self, image_data):
+        image = face_recognition.load_image_file(BytesIO(image_data))
         face_locations = face_recognition.face_locations(image)
         return face_locations
 
-    def extract_features(self, image_path, face_locations):
-        image = face_recognition.load_image_file(image_path)
+    def extract_features(self, image_data, face_locations):
+        image = face_recognition.load_image_file(BytesIO(image_data))
         face_encodings = face_recognition.face_encodings(image, face_locations)
         return face_encodings
 

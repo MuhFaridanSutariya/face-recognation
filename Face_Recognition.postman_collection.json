@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "674f72a7-a6fa-44a8-ac58-341734931702",
+		"name": "Face Recognition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21093294"
+	},
+	"item": [
+		{
+			"name": "Get All Data Face",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/faces",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"faces"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register New Face",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/face/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"face",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recognize Face",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/face/recognize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"face",
+						"recognize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Face",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/face/{{embedding_id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"face",
+						"{{embedding_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
