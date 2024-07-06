@@ -48,7 +48,6 @@ To get started, clone this repository onto your local machine. Follow the instru
    ```
 
 ### 2. Build and Run the Docker Image
-To get started, clone this repository onto your local machine. Follow the instructions below:
 
 1. Open a terminal or Command Prompt.
 2. Enter the following command to Build the Docker Image:
