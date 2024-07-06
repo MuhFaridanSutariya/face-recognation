@@ -1,4 +1,4 @@
 CREATE TABLE face_embeddings (
     id UUID PRIMARY KEY,
-    embedding FLOAT8[]
+    embedding DOUBLE PRECISION[]
 );

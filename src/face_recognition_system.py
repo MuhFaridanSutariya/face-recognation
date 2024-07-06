@@ -1,7 +1,7 @@
 import uuid
 import numpy as np
 import face_recognition
-from .database.py import get_db_connection
+from .database import get_db_connection
 
 class FaceRecognitionSystem:
     def __init__(self):

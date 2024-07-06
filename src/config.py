@@ -2,11 +2,11 @@ import os
 
 UPLOAD_FOLDER = 'uploads/'
 DATABASE_CONFIG = {
-    'dbname': "your_database",
-    'user': "your_user",
-    'password': "your_password",
-    'host': "your_host",
-    'port': "your_port"
+    'dbname': "postgres",
+    'user': "postgres",
+    'password': "123",
+    'host': "localhost",
+    'port': "5432"
 }
 
 if not os.path.exists(UPLOAD_FOLDER):
