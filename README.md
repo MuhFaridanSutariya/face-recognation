@@ -9,7 +9,11 @@ The directory structure of new project looks like this:
 
 ```
 
-│
+├── db_init                                      <- Database Init
+|   ├── init.sql                                 <- SQL script to create the face_embeddings table
+|
+|
+|
 ├── src                                          <- Source code
 │   ├── routes                                   <- API route definitions
 |      ├── face_routes.py                        <- API routes for face recognition operations
@@ -18,10 +22,8 @@ The directory structure of new project looks like this:
 │   ├── face_recognition_system.py               <- Utility scripts for face recognition logic
 │   ├── models.py                                <- Pydantic models for request and response validation
 |
-├── db_init                                      <- Database Init
-|   ├── init.sql                                 <- SQL script to create the face_embeddings table
+|
 ├── main.py                                      <- Main Application entry point
-│    
 ├── Face_Recognition.postman_collection.json     <- Starter Postman collection for testing APIs
 ├── .gitignore                                   <- List of files ignored by git
 ├── requirements.txt                             <- File for installing python dependencies
