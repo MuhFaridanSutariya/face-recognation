@@ -29,6 +29,10 @@ The directory structure of new project looks like this:
 
 ## How to run
 
+### 0. Prerequisites
+1. Docker and Docker Compose installed on your machine.
+2. Postman or any other API testing tool.
+
 ### 1. Clone this repository
 To get started, clone this repository onto your local machine. Follow the instructions below:
 
@@ -42,3 +46,17 @@ To get started, clone this repository onto your local machine. Follow the instru
    ```bash
    cd face-recognition
    ```
+
+### 2. Build and Run the Docker Image
+To get started, clone this repository onto your local machine. Follow the instructions below:
+
+1. Open a terminal or Command Prompt.
+2. Enter the following command to Build the Docker Image:
+   ```bash
+   docker-compose build
+   ```
+3. Once the Building Docker Image process is complete, We can to Run the Docker Image with this command:
+   ```bash
+   docker-compose up
+   ```
+This will start both the PostgreSQL and FastAPI containers. The FastAPI application will be accessible at `http://localhost:8000`
