@@ -59,3 +59,155 @@ To get started, clone this repository onto your local machine. Follow the instru
    docker-compose up
    ```
 This will start both the PostgreSQL and FastAPI containers. The FastAPI application will be accessible at `http://localhost:8000`
+
+### 3. API Endpoint:
+
+- `GET /api/faces`
+   Make a GET request to this endpoint to retrieve a list of all registered face IDs.
+   
+   <b>Response</b>
+   
+   - The API will respond with a JSON array containing the face IDs:
+   
+   `
+   [
+       "123e4567-e89b-12d3-a456-426614174000",
+       "223e4567-e89b-12d3-a456-426614174001"
+   ]
+   `
+
+
+- `POST /api/face/register`
+   Make a POST request to this endpoint to Registers a new face by uploading an image.
+
+   <b>Request Body</b>
+   
+   The request body should include the following field:
+   
+   `file`: The image file containing the face to register.
+   
+   Example request body (using form-data in Postman):
+   
+   `file`: type file **select an image file**
+   
+   <b>Response</b>
+   
+   - The API will respond with a JSON object containing the face ID:
+   
+   `
+   {
+       "face_id": "123e4567-e89b-12d3-a456-426614174000"
+   }
+   `
+  
+   - If no face is detected in the image, the response will be:
+  
+   `
+   {
+       "detail": "No face detected"
+   }
+   `
+  
+- `POST /api/face/recognize`
+   Make a POST request to this endpoint to recognize a face by uploading an image.
+
+   <b>Request Body</b>
+   
+   The request body should include the following field:
+   
+   `file`: The image file containing the face to register.
+   
+   Example request body (using form-data in Postman):
+   
+   `file`: type file **select an image file**
+   
+   <b>Response</b>
+   
+   - The API will respond with a JSON object containing the recognized face ID:
+   
+   `
+   {
+       "face_id": "123e4567-e89b-12d3-a456-426614174000"
+   }
+   `
+  
+   - If no face is detected in the image, the response will be:
+  
+   `
+   {
+       "detail": "No face detected"
+   }
+   `
+  
+   - If the face is not recognized, the response will be:
+  
+   `
+   {
+       "detail": "Face not recognized"
+   }
+   `
+
+
+
+- `DELETE /api/face/{face_id}`
+   Make a DELETE request to this endpoint to delete a face by its ID.
+
+   <b>Path Parameter</b>
+      
+   `face_id`: The ID of the face to delete.
+   
+   <b>Response</b>
+   
+   - The API will respond with a JSON object indicating that the face was deleted successfully:
+   
+   `
+   {
+       "message": "Success! Face deleted"
+   }
+  `
+  
+   - If the face is not found, the response will be:
+  
+   `
+   {
+       "detail": "Face not found"
+   }
+   `
+  
+   - If the face is not recognized, the response will be:
+  
+   `
+   {
+       "detail": "Face not recognized"
+   }
+   `
+#### Postman Collection:
+To simplify testing the API, a Postman collection `Face_Recognition.postman_collection.json` is provided. This collection includes predefined requests for all the API endpoints.
+How to Use the Postman Collection
+1. Import the Collection:
+   - Open Postman.
+   - Click on the `Import` button.
+   - Select the `Face_Recognition.postman_collection.json` file and import it.
+2. Run the Requests:
+   - The imported collection will appear in your Postman workspace.
+   - Expand the collection to see the predefined requests.
+   - Click on any request to view and run it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
