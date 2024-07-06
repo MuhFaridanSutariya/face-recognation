@@ -1,6 +1,6 @@
 # Face Recognition
 This Project for Exploration about Face Recognition Lifecycle.
-![image](https://github.com/MuhFaridanSutariya/vehicle-detection-counting/assets/88027268/528c5c40-bf2b-47ba-bbfa-013a95d92142)
+![image](https://github.com/MuhFaridanSutariya/face-recognition/assets/88027268/d9bc4ffc-8291-4bb2-b52a-fcf1321ce69e)
 
 ## Project Structure
 
@@ -9,13 +9,21 @@ The directory structure of new project looks like this:
 ```
 
 │
-├── utils.py               <- Utility Scripts
-├── video_processor.py     <- Webcam Scripts
-├── app.py                 <- Main Application
-├── requirements.txt       <- File for installing python dependencies
+├── src                                          <- Source code
+│   ├── routes                                   <- API route definitions
+|      ├── face_routes.py                        <- API routes for face recognition operations
+│   ├── config.py                                <- Configuration settings, such as database configuration
+│   ├── database.py                              <- Utility scripts for database connections and operations
+│   ├── face_recognition_system.py               <- Utility scripts for face recognition logic
+│   ├── models.py                                <- Pydantic models for request and response validation
+
 │
-├── vehicle-counting.mp4   <- Demo Video
-├── .gitignore             <- List of files ignored by git
+├── main.py                                      <- Main Application entry point
+│
+├── Face_Recognition.postman_collection.json     <- Starter Postman collection for testing APIs
+├── create_face_embeddings_table.sql             <- SQL script to create the face_embeddings table
+├── .gitignore                                   <- List of files ignored by git
+├── requirements.txt                             <- File for installing python dependencies
 └── README.md
 ```
 
