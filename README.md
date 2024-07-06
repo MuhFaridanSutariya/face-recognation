@@ -17,12 +17,12 @@ The directory structure of new project looks like this:
 │   ├── database.py                              <- Utility scripts for database connections and operations
 │   ├── face_recognition_system.py               <- Utility scripts for face recognition logic
 │   ├── models.py                                <- Pydantic models for request and response validation
-
-│
+|
+├── db_init                                      <- Database Init
+|   ├── init.sql                                 <- SQL script to create the face_embeddings table
 ├── main.py                                      <- Main Application entry point
-│
+│    
 ├── Face_Recognition.postman_collection.json     <- Starter Postman collection for testing APIs
-├── create_face_embeddings_table.sql             <- SQL script to create the face_embeddings table
 ├── .gitignore                                   <- List of files ignored by git
 ├── requirements.txt                             <- File for installing python dependencies
 └── README.md
