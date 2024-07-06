@@ -47,7 +47,7 @@ To get started, clone this repository onto your local machine. Follow the instru
    cd face-recognition
    ```
 
-### 2. Build and Run the Docker Image
+### 2. Build and Run Using Docker Image
 
 1. Open a terminal or Command Prompt.
 2. Enter the following command to Build the Docker Image:
@@ -57,6 +57,34 @@ To get started, clone this repository onto your local machine. Follow the instru
 3. Once the Building Docker Image process is complete, We can to Run the Docker Image with this command:
    ```bash
    docker-compose up
+   ```
+This will start both the PostgreSQL and FastAPI containers. The FastAPI application will be accessible at `http://localhost:8000`
+
+### 2. Build and Run Using Manual
+
+1. Open a terminal or Command Prompt.
+2. Create a Virtual Environment:
+   ```bash
+   python -m venv virtualenv_name
+   ```
+3. Activate the Virtual Environment:
+   On Windows:
+   ```bash
+   virtualenv_name\Scripts\activate
+   ```
+   On Linux:
+   ```bash
+   source virtualenv_name/bin/activate
+   ```
+4. Install CMake with this Tutorial [Click Here](https://medium.com/analytics-vidhya/how-to-install-dlib-library-for-python-in-windows-10-57348ba1117f)
+5. Install all project requirements:
+   ```bash
+   pip install -r requirements.txt
+   ```
+6. You can make new database and then table on PostgreSQL with name `face_embeddings` to store feature extraction from image. to detail you can directly using file at db_init/init.sql
+7. Run FastAPI:
+   ```bash
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
    ```
 This will start both the PostgreSQL and FastAPI containers. The FastAPI application will be accessible at `http://localhost:8000`
 
